@@ -1,4 +1,22 @@
 @import "tailwindcss";
+/* globals.css */
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 
 :root {
   --background: #ffffff;
@@ -23,4 +41,89 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Quentin';
+  src: url('/fonts/Quentin.woff2') format('woff2'), 
+       url('/fonts/Quentin.woff') format('woff'),
+       url('/fonts/Quentin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Any other global styles go below here */
+/* ====== Custom Styles for Header ====== */
+.nav-link {
+  @apply text-sm hover:text-yellow-400 transition;
+}
+
+/* globals.css */
+
+/* Hide both horizontal and vertical scrollbars */
+body {
+  overflow: hidden;
+
+}
+
+/* Optional: To hide scrollbars in a more cross-browser way (though not required by the prompt) */
+/* For IE and Edge */
+body {
+  -ms-overflow-style: none; 
+}
+/* For Firefox */
+body {
+  /* scrollbar-width: none;  */
+  /* scrollbar-height: none; */
+}
+/* For Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.hero-button {
+  @apply bg-white text-black px-6 py-2 rounded-full font-semibold shadow 
+         hover:bg-yellow-400 hover:text-white transition;
+}
+
+.cta-button {
+  @apply bg-white text-black px-4 py-2 rounded-full font-semibold shadow 
+         hover:bg-yellow-400 hover:text-white transition;
+}
+
+/* For the overlay on hero image */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Smooth fade-in animation */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
